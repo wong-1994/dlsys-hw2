@@ -231,17 +231,7 @@ def broadcast_to(a, shape):
 
 class Summation(TensorOp):
     def __init__(self, axes: Optional[tuple] = None):
-        if isinstance(axes, tuple):
-            self.axes = axes
-        elif isinstance(axes, int):
-            self.axes = (axes,)
-        else:
-            try:
-                self.axes = tuple(axes)
-            except TypeError:
-                print("Summation axes type should be able to convert to tuple.")
-                raise e
-        
+        self.axes = axes
 
     def compute(self, a):
         ### BEGIN YOUR SOLUTION
