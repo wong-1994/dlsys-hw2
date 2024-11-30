@@ -335,9 +335,8 @@ class ReLU(TensorOp):
 
     def gradient(self, out_grad, node):
         ### BEGIN YOUR SOLUTION
-        gate = array_api.where(node.inputs[0].cached_data > 0, 1, 0)
-        out_grad.cached_data *= gate
-        return out_grad
+        gate = Tensor(array_api.where(node.inputs[0].cached_data > 0, 1, 0))
+        return out_grad * gate
         ### END YOUR SOLUTION
 
 
