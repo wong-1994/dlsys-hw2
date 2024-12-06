@@ -186,7 +186,7 @@ def reshape(a, shape):
     return Reshape(shape)(a)
 
 # ################################################################################## #
-# @ Helper Function to find which axes have been changed during braodcast.           #
+# @ Helper Function to find which axes have been changed during broadcast.           #
 #                                                                                    #
 # Broadcast operation mathes size from last dimension.                               #
 # eg: (3, ) cannot be broadcasted to (3, 1, 1), but can be broadcasted to (1, 1, 3). #
