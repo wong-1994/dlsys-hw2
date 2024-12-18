@@ -83,7 +83,7 @@ class MNISTDataset(Dataset):
         ### BEGIN YOUR SOLUTION
         if self.transforms:
             return self.apply_transforms(self.images[index]), self.labels[index]
-        return self.images[index], self.labels[index]
+        return self.images[index].reshape((-1, 28 * 28)), self.labels[index]
         ### END YOUR SOLUTION
 
     def __len__(self) -> int:
